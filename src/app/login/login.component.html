@@ -1,0 +1,25 @@
+
+<form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <div>
+        <label for="username">username</label>
+        <input type="text" placeholder="Enter username" formControlName="username">
+        <small *ngIf="username.invalid &&(username.dirty || username.touched)">
+                username is mandatory field
+            </small>
+    </div>
+    <div>
+            <label for="password">password</label>
+        <input type="password" placeholder="Enter password" formControlName="password" >
+        <small *ngIf="password.invalid &&(password.dirty || password.touched)">
+                <small *ngIf="password.errors.required">
+                    password cannot be blank
+                </small>
+                <small *ngIf="password.errors.minlength">
+                    password Min 6 characters
+                </small>
+            </small>
+    </div>
+    <div>
+    <button>submit</button>
+</div>
+</form>

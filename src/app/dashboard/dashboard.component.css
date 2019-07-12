@@ -1,0 +1,13 @@
+.notecontainer {
+    width: 25em;
+    margin:1em auto;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card {
+    margin: 1em;
+    width: 40%;
+}

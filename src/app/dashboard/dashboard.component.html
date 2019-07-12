@@ -1,0 +1,29 @@
+<mat-expansion-panel class="notecontainer">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Make a note
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input [(ngModel)]="note.title" matInput placeholder="Title" name="title">
+          </mat-form-field>
+      
+          <mat-form-field class="example-full-width">
+            <textarea [(ngModel)]="note.text" matInput placeholder="Your text" name="note"></textarea>
+          </mat-form-field>
+      
+          <button mat-button (click)="takeNotes()">Add note</button>
+      
+        </form>
+      </mat-expansion-panel>
+      
+      
+      <mat-card *ngFor="let notes of noteList">
+        <mat-card-title>
+          {{ notes.title }}
+        </mat-card-title>
+        <mat-card-content>
+          {{ notes.text }}
+        </mat-card-content>
+      </mat-card>
